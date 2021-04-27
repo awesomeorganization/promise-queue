@@ -1,0 +1,35 @@
+{
+  "name": "@awesomeorganization/promise-queue",
+  "description": "[ESM] The promise-based queue with concurrency control. Works with Browser and Node.js",
+  "version": "1.0.0",
+  "exports": "./main.js",
+  "type": "module",
+  "repository": "github:awesomeorganization/promise-queue",
+  "license": "MIT",
+  "author": {
+    "name": "sergeysedoy97"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-node": "11.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "7.24.0",
+    "prettier": "2.2.1"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "concurrency",
+    "promise-based",
+    "promise-queue",
+    "promise",
+    "queue"
+  ]
+}
