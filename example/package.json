@@ -5,6 +5,6 @@
   "type": "module",
   "dependencies": {
     "@awesomeorganization/promise-queue": "..",
-    "undici": "3.3.6"
+    "undici": "4.5.1"
   }
 }
