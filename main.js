@@ -32,6 +32,10 @@ export const promiseQueue = ({ concurrency = DEFAULT_CONCURRENCY } = { concurren
       }
     }
   }
+  const clear = () => {
+    isEmpty = true
+    queue.length = 0
+  }
   const push = (callback) => {
     return new Promise((onThen, onCatch) => {
       queue.push([callback, onThen, onCatch])
@@ -41,6 +45,8 @@ export const promiseQueue = ({ concurrency = DEFAULT_CONCURRENCY } = { concurren
     })
   }
   return {
+    clear,
     push,
+    queue,
   }
 }

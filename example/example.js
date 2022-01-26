@@ -1,12 +1,13 @@
 /* eslint-disable node/no-unsupported-features/es-syntax */
 
 import { promiseQueue } from '@awesomeorganization/promise-queue'
-import undici from 'undici'
+import { request } from 'undici'
 
 const example = async () => {
   const { push } = promiseQueue({
     concurrency: 2,
   })
+  const time = Date.now()
   const [
     {
       headers: { date: dateA },
@@ -19,19 +20,20 @@ const example = async () => {
     },
   ] = await Promise.all([
     push(() => {
-      return undici.request('https://httpbin.org/delay/1')
+      return request('https://httpbin.org/delay/1')
     }),
     push(() => {
-      return undici.request('https://httpbin.org/delay/1')
+      return request('https://httpbin.org/delay/1')
     }),
     push(() => {
-      return undici.request('https://httpbin.org/delay/1')
+      return request('https://httpbin.org/delay/1')
     }),
   ])
   console.dir({
     dateA,
     dateB,
     dateC,
+    duration: Math.round((Date.now() - time) / 1000),
   })
 }
 

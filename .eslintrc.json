@@ -1,12 +1,12 @@
 {
   "extends": ["eslint:recommended", "plugin:node/recommended", "prettier"],
   "env": {
+    "browser": true,
     "es2021": true,
-    "node": true,
-    "browser": true
+    "node": true
   },
   "parserOptions": {
-    "ecmaVersion": 2021,
+    "ecmaVersion": "latest",
     "sourceType": "module",
     "ecmaFeatures": {
       "impliedStrict": true
@@ -28,6 +28,7 @@
     "no-var": "warn",
     "node/exports-style": ["warn", "module.exports"],
     "node/file-extension-in-import": ["warn", "always"],
+    "node/no-missing-import": "off",
     "node/prefer-global/buffer": ["warn", "always"],
     "node/prefer-global/console": ["warn", "always"],
     "node/prefer-global/process": ["warn", "always"],
