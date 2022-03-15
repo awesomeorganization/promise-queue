@@ -1,5 +1,3 @@
-/* eslint-disable node/no-unsupported-features/es-syntax */
-
 import { promiseQueue } from '@awesomeorganization/promise-queue'
 import { request } from 'undici'
 
@@ -29,6 +27,7 @@ const example = async () => {
       return request('https://httpbin.org/delay/1')
     }),
   ])
+  // eslint-disable-next-line no-console
   console.dir({
     dateA,
     dateB,

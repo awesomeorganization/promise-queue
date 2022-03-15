@@ -1,4 +1,4 @@
-/* eslint-disable node/no-unsupported-features/es-syntax */
+/* eslint-disable github/no-then */
 
 const DEFAULT_CONCURRENCY = 1
 
@@ -24,6 +24,7 @@ export const promiseQueue = ({ concurrency = DEFAULT_CONCURRENCY } = { concurren
           })
         )
           .then((values) => {
+            // eslint-disable-next-line github/array-foreach
             values.forEach((iterator, index) => {
               iterator.status === 'fulfilled' ? slice[index][1](iterator.value) : slice[index][2](iterator.reason)
             })

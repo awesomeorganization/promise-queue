@@ -5,7 +5,7 @@ name = "javascript"
 enabled = true
 
   [analyzers.meta]
-  environment = ["browser", "nodejs"]
+  environment = ["nodejs"]
   module_system = "es-modules"
 
 [[transformer]]
